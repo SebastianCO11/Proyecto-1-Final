@@ -1,4 +1,4 @@
-# Veterinaria JMGL & SC
+# Veterinaria SCO & JMGL
 En este repositorio encontrará un software de directorio telefonico de una veterinaria que permite guardar información de los propietarios y mascotas registradas.
 
 # Funcionalidades
