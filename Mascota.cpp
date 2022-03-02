@@ -1,7 +1,12 @@
 #include "Mascota.h"
 
-double Mascota::getIdentificacion(double identificacion){
-    return this-> identificacion;
+Mascota::Mascota(double identificacionMascota, string raza, string tipoSangre, 
+                string nombreMascota, float peso, int edad, bool statusExistencia){
+
+}
+
+double Mascota::getIdentificacion(double identificacionMascota){
+    return this-> identificacionMascota;
 }
 
 bool Mascota::getStatusExistencia(bool statusExistencia){

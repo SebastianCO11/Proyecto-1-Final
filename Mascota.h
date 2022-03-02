@@ -10,16 +10,17 @@ using std::vector;
 
 class Mascota{
     private:
-        double identificacion;
-        string raza, tipoSangre, nombre;
+        double identificacionMascota;
+        string raza, tipoSangre, nombreMascota;
         float peso;
         int edad;
         bool statusExistencia;
-        Propietario propietario;
         vector<Propietario> propietarios;
 
     public:
-        double getIdentificacion(double identificacion);
+        Mascota(double identificacionMascota, string raza, string tipoSangre, string nombreMascota,
+        float peso, int edad, bool statusExistencia);
+        double getIdentificacion(double identificacionMascota);
         bool getStatusExistencia(bool statusExistencia);
 };
 
