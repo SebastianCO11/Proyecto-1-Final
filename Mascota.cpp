@@ -1,5 +1,15 @@
 #include "Mascota.h"
 
+Mascota::Mascota(){
+    identificacionMascota += 1;
+    raza = "temp";
+    tipoSangre = "temp";
+    nombreMascota = "temp";
+    peso = 0;
+    edad = 0;
+    statusExistencia = false;
+}
+
 Mascota::Mascota(double identificacionMascota, string raza, string tipoSangre, 
                 string nombreMascota, float peso, int edad, bool statusExistencia){
     this -> identificacionMascota = identificacionMascota;
