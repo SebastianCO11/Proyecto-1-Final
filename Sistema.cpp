@@ -1,7 +1,7 @@
 #include "Sistema.h"
 
 void Sistema::inicializarDatos(){
-
+    
 }
 
 void Sistema::agregarPropietario(){

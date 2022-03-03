@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "Propietario.h"
+#include <unordered_map>
 #include <vector>
 
 using std::string; 
