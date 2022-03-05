@@ -2,6 +2,8 @@
 #include "Sistema.h"
 using namespace std;
 using std::string;
+unordered_map<double, Propietario>:: iterator itrPropietarios;
+unordered_map<double, Mascota>:: iterator itrMascotas;
 
 void Sistema::agregarPropietario(){
     double identificacion = 0, telefono;
@@ -27,13 +29,16 @@ void Sistema::agregarMascota(){
     double identificacionMascota;
     string raza, tipoSangre, nombreMascota;
     float peso;
-    int edad;
+    int edad, tipoMascota;
     bool statusExistencia;
     cout << "Ingrese el nombre: ";
     cin >> nombreMascota;
     cout << "\n"; 
     cout << "Ingrese la identificacion: ";
     cin >> identificacionMascota;
+    cout << "\n";
+    cout << "Ingrese el tipo de mascota (1 = perro / 2 = gato / 3 = otro): ";
+    cin >> tipoMascota;
     cout << "\n";
     cout << "Ingrese la raza: ";
     cin >> raza;
@@ -48,13 +53,25 @@ void Sistema::agregarMascota(){
     cin >> edad;
     cout << "\n";
     statusExistencia = true;
-    Mascota mascotaT(identificacionMascota, raza, tipoSangre, nombreMascota, 
+    Mascota mascotaT(identificacionMascota, tipoMascota, raza, tipoSangre, nombreMascota, 
                     peso, edad, statusExistencia);
     mapaMascota[identificacionMascota] = mascotaT;
 }
 
 void Sistema::asociarMascotaPropietario(){
+    int keyMascota, keyPropietario;
+    cout << "Ingrese el ID de la mascota: ";
+    cin >> keyMascota;
+    cout << "\n";
+    cout << "Ingrese el ID de la propietario: ";
+    cin >> keyPropietario;
+    cout << "\n";
+    if( mapaMascota.find(keyMascota) == mapaMascota.end() ){
+        cout << "La mascota no ha sido registrada en el sistema.";
+    }
+    else{
 
+    }
 }
 
 void Sistema::asociarNuevoPropietarioMascota(){
@@ -66,22 +83,14 @@ void Sistema::cambiarStatusMascota(){
     cout << "Ingrese el ID de la mascota: ";
     cin >> key;
     cout << "\n";
-    if( mapaPropietarios.find(key) == mapaPropietarios.end() ){
+    if( mapaMascota.find(key) == mapaMascota.end() ){
         cout << "La mascota no ha sido registrada en el sistema.";
     }
     else{
         //cambiar status
-        cout << "Que estatus debe de tener la mascota ahora\n";
-        cout << "1. viva\n";
-        cout << "2. muerta\n";
-        cout << "Resputa: ";
-        cin >> temporal;
-        cout << "\n";
-        if(temporal == 1){
-            //mapaMascota[key].statusExistencia = true;
-        }
-        else{
-            //mapaMascota[key].statusExistencia = false;
+        if( mapaMascota[key].getStatusExistencia() == true)
+        {
+            mapaMascota[key].setStatusExistencia(false);
         }
         cout << "Status cambiado.\n";   
     }
@@ -137,11 +146,22 @@ void Sistema::eliminarPropietarioMascota(){
 }
 
 void Sistema::infoMascotasRegistradas(){
-
+    int count = 0;
+    for (itrMascotas = mapaMascota.begin(); itrMascotas != mapaMascota.end(); itrMascotas++)
+    {
+        count++;
+        cout << "Mascota #" << count << "\n";
+        itrMascotas->second.infoMascota();
+    }
 }
 
 void Sistema::infoPropietariosRegistrados(){
-    for (auto i = begin(mapaPropietarios); i != end(mapaPropietarios); i++){
+    int count = 0;
+    for (itrPropietarios = mapaPropietarios.begin(); itrPropietarios != mapaPropietarios.end(); itrPropietarios++)
+    {
+        count++;
+        cout << "Propietario #" << count << "\n";
+        itrPropietarios->second.infoPropietario();
     }
 }
 

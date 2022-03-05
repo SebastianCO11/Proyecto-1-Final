@@ -16,6 +16,7 @@ class Propietario{
         Propietario();
         double getIdentificacion(double statusExistencia);
         double getTelefono(double telefono);
+        void infoPropietario();
 };
 
 #endif

@@ -13,13 +13,10 @@ using std::unordered_map;
 class Sistema{
     private:
         unordered_map<double, Propietario> mapaPropietarios;
-        unordered_map<double, Propietario> mapaPropietarios;
         unordered_map<double, Mascota> mapaMascota;
         vector<PropietarioxMascota> PMXtemporal;
 
-
     public:
-        void inicializarDatos();
         void agregarPropietario();
         void agregarMascota();
         void modificarPropietario();

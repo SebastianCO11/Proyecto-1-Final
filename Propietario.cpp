@@ -15,7 +15,6 @@ Propietario::Propietario(double identificacion, double telefono, string nombre, 
     this -> telefono = telefono;
     this -> nombre = nombre;
     this -> email = email;
-    cout << nombre << "s\n";
 }
 
 double Propietario::getTelefono(double telefono){
@@ -24,5 +23,12 @@ double Propietario::getTelefono(double telefono){
 
 double Propietario::getIdentificacion(double identificacion){
     return this-> identificacion;
+}
+
+void Propietario::infoPropietario(){
+    cout << "El nombre es: " << nombre << "\n";
+    cout << "La identificacion es: " << identificacion << "\n";
+    cout << "Email: "<< email << "\n";
+cout << "Telefono: " << telefono << "\n\n";
 }
 

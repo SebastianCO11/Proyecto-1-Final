@@ -24,7 +24,7 @@ void menu(Sistema sistema){
         cout << "12. Asociar nuevo propietario a una mascota \n";
         cout << "13. Cambiar el estatus de la mascota \n";
         cout << "14. Eliminar asociacion propietario a mascota \n";
-        cout << "0. Salir \n";
+        cout << "0. Salir \n\n";
         cout << "Respuesta: ";
         cin >> opc;
 
@@ -49,15 +49,27 @@ void menu(Sistema sistema){
             sistema.numPropietariosRegistrados();
             break;
         case 7:
-            
+            sistema.infoPropietariosRegistrados();
             break;
         case 8:
-            
+            sistema.infoMascotasRegistradas();
             break;
         case 9:
             sistema.consultarMascotaPropietario();
             break;
         case 10:
+            
+            break;
+        case 11:
+            
+            break;
+        case 12:
+            
+            break;
+        case 13:
+            sistema.cambiarStatusMascota();
+            break;
+        case 14:
             
             break;
         default:
@@ -69,7 +81,6 @@ void menu(Sistema sistema){
 int main()
 {
     Sistema sistema;
-    sistema.inicializarDatos();
     menu(sistema);
     return 0;
 }
