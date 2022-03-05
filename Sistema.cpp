@@ -3,10 +3,6 @@
 using namespace std;
 using std::string;
 
-void Sistema::inicializarDatos(){
-    
-}
-
 void Sistema::agregarPropietario(){
     double identificacion = 0, telefono;
     string nombre;
@@ -66,7 +62,7 @@ void Sistema::asociarNuevoPropietarioMascota(){
 }
 
 void Sistema::cambiarStatusMascota(){
-    int key;
+    int key, temporal;
     cout << "Ingrese el ID de la mascota: ";
     cin >> key;
     cout << "\n";
@@ -75,8 +71,19 @@ void Sistema::cambiarStatusMascota(){
     }
     else{
         //cambiar status
-        cout << "Status cambiado.\n";
-        
+        cout << "Que estatus debe de tener la mascota ahora\n";
+        cout << "1. viva\n";
+        cout << "2. muerta\n";
+        cout << "Resputa: ";
+        cin >> temporal;
+        cout << "\n";
+        if(temporal == 1){
+            //mapaMascota[key].statusExistencia = true;
+        }
+        else{
+            //mapaMascota[key].statusExistencia = false;
+        }
+        cout << "Status cambiado.\n";   
     }
 }
 
@@ -134,7 +141,8 @@ void Sistema::infoMascotasRegistradas(){
 }
 
 void Sistema::infoPropietariosRegistrados(){
-
+    for (auto i = begin(mapaPropietarios); i != end(mapaPropietarios); i++){
+    }
 }
 
 void Sistema::listarPropietario(){
@@ -158,9 +166,9 @@ void Sistema::modificarPropietario(){
 }
 
 void Sistema::numPropietariosRegistrados(){
-    int count = 0;
-    for (auto i = begin(mapaPropietarios); i != end(mapaPropietarios); i++)
-    {
+    int count = 0, i;
+    for (auto i = begin(mapaPropietarios); i != end(mapaPropietarios); i++){
+        count++;
     }
     cout <<"Hay " << count << " propietarios registrados en el directorio de la veterinaria.\n";
 }
