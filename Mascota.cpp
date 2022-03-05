@@ -1,7 +1,7 @@
 #include "Mascota.h"
 
 Mascota::Mascota(){
-    identificacionMascota += 1;
+    identificacionMascota = 0;
     raza = "temp";
     tipoSangre = "temp";
     nombreMascota = "temp";

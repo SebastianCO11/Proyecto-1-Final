@@ -7,7 +7,7 @@ Propietario::Propietario(){
     nombre = "temp";
     email = "temp";
     telefono = 1;
-    identificacion += 1; 
+    identificacion = 0; 
 }
 
 Propietario::Propietario(double identificacion, double telefono, string nombre, string email){
