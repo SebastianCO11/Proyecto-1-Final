@@ -11,12 +11,11 @@ Propietario::Propietario(){
 }
 
 Propietario::Propietario(double identificacion, double telefono, string nombre, string email){
-    cout << "Entre\n";
     this -> identificacion = identificacion;
     this -> telefono = telefono;
     this -> nombre = nombre;
     this -> email = email;
-    cout << nombre;
+    cout << nombre << "s\n";
 }
 
 double Propietario::getTelefono(double telefono){

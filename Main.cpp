@@ -9,12 +9,12 @@ void menu(Sistema sistema){
     int opc = 0;
     do
     {
-        cout << "Bienvenidos  \n";
+        cout << "Bienvenido!  \n\n";
         cout << "1. Agregar propietario \n";
         cout << "2. Agregar mascota \n";
         cout << "3. Modificar info propietario \n";
         cout << "4. Eliminar propietario \n";
-        cout << "5. Listar propietario \n";
+        cout << "5. Listar propietarios \n";
         cout << "6. Num de propietarios registrados \n";
         cout << "7. Info de propietarios registrados \n";
         cout << "8. Info de mascotas registrados \n";
@@ -34,7 +34,7 @@ void menu(Sistema sistema){
             sistema.agregarPropietario();
             break;
         case 2:
-            
+            sistema.agregarMascota();
             break;
         case 3:
             
@@ -46,7 +46,7 @@ void menu(Sistema sistema){
             
             break;
         case 6:
-            
+            sistema.numPropietariosRegistrados();
             break;
         case 7:
             

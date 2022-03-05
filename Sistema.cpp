@@ -64,7 +64,18 @@ void Sistema::asociarNuevoPropietarioMascota(){
 }
 
 void Sistema::cambiarStatusMascota(){
-
+    int key;
+    cout << "Ingrese el ID de la mascota: ";
+    cin >> key;
+    cout << "\n";
+    if( mapaPropietarios.find(key) == mapaPropietarios.end() ){
+        cout << "La mascota no ha sido registrada en el sistema.";
+    }
+    else{
+        //cambiar status
+        cout << "Status cambiado.\n";
+        
+    }
 }
 
 void Sistema::consultarMascotaPropietario(){
@@ -73,7 +84,7 @@ void Sistema::consultarMascotaPropietario(){
     cin >> key;
     cout << "\n";
     if( mapaPropietarios.find(key) == mapaPropietarios.end() ){
-        cout << "La mascota no ha sido registrada en el sistema";
+        cout << "La mascota no ha sido registrada en el sistema.";
     }
     else{
         cout << "El/Los propietario/s de esta mascota son: \n";
@@ -83,11 +94,34 @@ void Sistema::consultarMascotaPropietario(){
 }
 
 void Sistema::consultarPropietariosMascota(){
-    
+    int key;
+    cout << "Ingrese el ID del propietario: ";
+    cin >> key;
+    cout << "\n";
+    if( mapaPropietarios.find(key) == mapaPropietarios.end() ){
+        cout << "El propietario no ha sido registrada en el sistema.";
+    }
+    else{
+        cout << "La(s) mascota(s) de este propietario son: \n";
+        
+    }
+    cout << "\n";
 }
 
 void Sistema::eliminarPropietario(){
-
+    int key;
+    cout << "Ingrese el ID del propietario: ";
+    cin >> key;
+    cout << "\n";
+    if( mapaPropietarios.find(key) == mapaPropietarios.end() ){
+        cout << "El propietario no ha sido registrada en el sistema.";
+    }
+    else{
+        //eliminar prop
+        cout << "Propietario #" << key << " eliminado correctamente. \n";
+        
+    }
+    cout << "\n";
 }
 
 void Sistema::eliminarPropietarioMascota(){
@@ -107,11 +141,27 @@ void Sistema::listarPropietario(){
 }
 
 void Sistema::modificarPropietario(){
-
+    int key;
+    cout << "Ingrese el ID del propietario: ";
+    cin >> key;
+    cout << "\n";
+    if( mapaPropietarios.find(key) == mapaPropietarios.end() ){
+        cout << "El propietario no ha sido registrada en el sistema.";
+    }
+    else{
+        //que atributo modificar?
+        cout << "Modificado \n";
+        
+    }
+    cout << "\n";
 }
 
 void Sistema::numPropietariosRegistrados(){
-
+    int count = 0;
+    for (auto i = begin(mapaPropietarios); i != end(mapaPropietarios); i++)
+    {
+    }
+    cout <<"Hay " << count << " propietarios registrados en el directorio de la veterinaria.\n";
 }
 
 
