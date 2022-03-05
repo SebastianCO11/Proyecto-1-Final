@@ -24,6 +24,7 @@ void Sistema::agregarPropietario(){
     cin >> email;
     cout << "\n";
     Propietario propietarioT(identificacion, telefono, nombre, email);
+    mapaPropietarios[identificacion] = propietarioT;
 }
 
 void Sistema::agregarMascota(){
@@ -53,6 +54,7 @@ void Sistema::agregarMascota(){
     statusExistencia = true;
     Mascota mascotaT(identificacionMascota, raza, tipoSangre, nombreMascota, 
                     peso, edad, statusExistencia);
+    mapaMascota[identificacionMascota] = mascotaT;
 }
 
 void Sistema::asociarMascotaPropietario(){
@@ -64,7 +66,17 @@ void Sistema::asociarNuevoPropietarioMascota(){
 }
 
 void Sistema::cambiarStatusMascota(){
-
+    int key;
+    cout << "Ingrese el ID de la mascota: ";
+    cin >> key;
+    cout << "\n";
+    if( mapaPropietarios.find(key) == mapaPropietarios.end() ){
+        cout << "La mascota no ha sido registrada en el sistema";
+    }
+    else{
+       
+    }
+    cout << "\n";
 }
 
 void Sistema::consultarMascotaPropietario(){
@@ -76,7 +88,6 @@ void Sistema::consultarMascotaPropietario(){
         cout << "La mascota no ha sido registrada en el sistema";
     }
     else{
-        cout << "El/Los propietario/s de esta mascota son: \n";
         
     }
     cout << "\n";

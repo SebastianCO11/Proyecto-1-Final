@@ -3,6 +3,7 @@
 
 #include "Propietario.h"
 #include "Mascota.h"
+#include "PropietarioxMascota.h"
 #include <vector>
 #include <unordered_map>
 
@@ -12,9 +13,9 @@ using std::unordered_map;
 class Sistema{
     private:
         unordered_map<double, Propietario> mapaPropietarios;
-        vector<Propietario> propietarios;
         unordered_map<double, Mascota> mapaMascota;
-        vector<Mascota> mascotas;
+        vector<PropietarioxMascota> PMXtemporal;
+
 
     public:
         void inicializarDatos();
