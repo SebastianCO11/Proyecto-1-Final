@@ -22,7 +22,7 @@ class Mascota{
         Mascota();
         Mascota(double identificacionMascota, int tipoMascota, string raza, string tipoSangre, 
         string nombreMascota, float peso, int edad, bool statusExistencia);
-        double getIdentificacion(double identificacionMascota);
+        double getIdentificacionMascota();
         bool getStatusExistencia();
         void setStatusExistencia(bool statusExistencia);
         void infoMascota();

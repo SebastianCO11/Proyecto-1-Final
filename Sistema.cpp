@@ -87,12 +87,17 @@ void Sistema::cambiarStatusMascota(){
         cout << "La mascota no ha sido registrada en el sistema.";
     }
     else{
+        time_t tSac = time(NULL);  // instante actual
+        struct tm* pt1 = localtime(&tSac);
+        tm tm2 = *gmtime(&tSac);
         //cambiar status
-        if( mapaMascota[key].getStatusExistencia() == true)
-        {
+        if( mapaMascota[key].getStatusExistencia() == true){
             mapaMascota[key].setStatusExistencia(false);
         }
         cout << "Status cambiado.\n";   
+        cout << "Fecha de muerte: " << "dd-mm-aaaa: " << tm2.tm_mday << "-" << tm2.tm_mon+1 << "-"
+        << tm2.tm_year+1900 << endl;
+        cout << "\n";
     }
 }
 
@@ -166,7 +171,15 @@ void Sistema::infoPropietariosRegistrados(){
 }
 
 void Sistema::listarPropietario(){
-
+    int count = 0;
+    for (itrPropietarios = mapaPropietarios.begin(); itrPropietarios != mapaPropietarios.end(); itrPropietarios++)
+    {
+        count++;
+        cout << "Propietario #" << count << "\n";
+        cout << itrPropietarios->second.getIdentificacion() << " " 
+        << itrPropietarios->second.getNombre();
+        cout << "\n\n";
+    }
 }
 
 void Sistema::modificarPropietario(){

@@ -6,6 +6,7 @@
 #include "PropietarioxMascota.h"
 #include <vector>
 #include <unordered_map>
+#include <ctime>
 
 using std::string;
 using std::unordered_map;

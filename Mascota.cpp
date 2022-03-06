@@ -23,7 +23,7 @@ Mascota::Mascota(double identificacionMascota, int tipoMascota, string raza, str
     this -> statusExistencia = statusExistencia;
 }
 
-double Mascota::getIdentificacion(double identificacionMascota){
+double Mascota::getIdentificacionMascota(){
     return this-> identificacionMascota;
 }
 

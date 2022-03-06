@@ -14,9 +14,10 @@ class Propietario{
     public:
         Propietario(double identificacion, double telefono, string nombre, string email);
         Propietario();
-        double getIdentificacion(double statusExistencia);
-        double getTelefono(double telefono);
+        double getIdentificacion();
+        double getTelefono();
         void infoPropietario();
+        string getNombre();
 };
 
 #endif

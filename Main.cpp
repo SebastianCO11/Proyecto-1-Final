@@ -43,7 +43,7 @@ void menu(Sistema sistema){
             
             break;
         case 5:
-            
+            sistema.listarPropietario();
             break;
         case 6:
             sistema.numPropietariosRegistrados();
