@@ -55,10 +55,10 @@ void menu(Sistema sistema){
             sistema.infoMascotasRegistradas();
             break;
         case 9:
-            sistema.consultarMascotaPropietario();
+            sistema.consultarPropietariosMascota();
             break;
         case 10:
-            sistema.consultarPropietariosMascota();
+            sistema.consultarMascotaPropietario();
             break;
         case 11:
             sistema.asociarMascotaPropietario();

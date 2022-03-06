@@ -15,8 +15,8 @@ class Sistema{
     private:
         unordered_map<double, Propietario> mapaPropietarios;
         unordered_map<double, Mascota> mapaMascota;
-        vector<PropietarioxMascota> PXMtemporal;
-
+        vector<PropietarioxMascota> PXMvector;
+        
     public:
         void agregarPropietario();
         void agregarMascota();

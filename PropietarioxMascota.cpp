@@ -9,5 +9,6 @@ Propietario PropietarioxMascota::getPropietario(){
 }
 
 PropietarioxMascota::PropietarioxMascota(Propietario propietario, Mascota mascota){
-    
+    this -> propietario = propietario;
+    this -> mascota = mascota;
 }
