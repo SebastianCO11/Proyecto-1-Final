@@ -14,7 +14,7 @@ void Sistema::agregarPropietario(){
     cin >> key;
     cout << "\n";
     if( mapaPropietarios.find(key) != mapaPropietarios.end() ){
-        cout << "El propietario ya ha sido registrada en el sistema.\n";
+        cout << "El propietario ya ha sido registrado en el sistema.\n";
     }
     else{
         identificacion = key;
@@ -71,7 +71,7 @@ void Sistema::agregarMascota(){
         mapaMascota[identificacionMascota] = mascotaT;
     }
 }
-
+//Falta
 void Sistema::asociarMascotaPropietario(){
     int keyMascota, keyPropietario;
     cout << "Ingrese el ID de la mascota: ";
@@ -87,7 +87,7 @@ void Sistema::asociarMascotaPropietario(){
 
     }
 }
-
+//Falta
 void Sistema::asociarNuevoPropietarioMascota(){
 
 }
@@ -114,7 +114,7 @@ void Sistema::cambiarStatusMascota(){
         cout << "\n";
     }
 }
-
+//Falta
 void Sistema::consultarMascotaPropietario(){
     int key;
     cout << "Ingrese el ID de la mascota: ";
@@ -128,7 +128,7 @@ void Sistema::consultarMascotaPropietario(){
     }
     cout << "\n";
 }
-
+//Falta
 void Sistema::consultarPropietariosMascota(){
     int key;
     cout << "Ingrese el ID del propietario: ";
@@ -150,27 +150,27 @@ void Sistema::eliminarPropietario(){
     cin >> key;
     cout << "\n";
     if( mapaPropietarios.find(key) == mapaPropietarios.end() ){
-        cout << "El propietario no ha sido registrada en el sistema.";
+        cout << "El propietario no ha sido registrada en el sistema.\n\n";
     }
     else{
-        //eliminar prop
-        cout << "Propietario #" << key << " eliminado correctamente. \n";
-        
+        mapaPropietarios.erase(key);
+        cout << "Propietario #" << key << " eliminado correctamente. \n\n";
     }
-    cout << "\n";
 }
-
+//Falta
 void Sistema::eliminarPropietarioMascota(){
 
 }
 
 void Sistema::infoMascotasRegistradas(){
     int count = 0;
-    for (itrMascotas = mapaMascota.begin(); itrMascotas != mapaMascota.end(); itrMascotas++)
-    {
+    for (itrMascotas = mapaMascota.begin(); itrMascotas != mapaMascota.end(); itrMascotas++){
         count++;
         cout << "Mascota #" << count << "\n";
         itrMascotas->second.infoMascota();
+    }
+    if (count == 0){
+        cout << "No hay mascotas registradas actualmente.\n\n";
     }
 }
 
@@ -182,22 +182,30 @@ void Sistema::infoPropietariosRegistrados(){
         cout << "Propietario #" << count << "\n";
         itrPropietarios->second.infoPropietario();
     }
+    if (count == 0){
+        cout << "No hay propietarios registrados actualmente.\n\n";
+    }
 }
 
 void Sistema::listarPropietario(){
     int count = 0;
-    for (itrPropietarios = mapaPropietarios.begin(); itrPropietarios != mapaPropietarios.end(); itrPropietarios++)
-    {
+    for (itrPropietarios = mapaPropietarios.begin(); 
+        itrPropietarios != mapaPropietarios.end(); itrPropietarios++){
         count++;
         cout << "Propietario #" << count << "\n";
-        cout << itrPropietarios->second.getIdentificacion() << " " 
+        cout << "ID: " << itrPropietarios->second.getIdentificacion() << " Nombre: " 
         << itrPropietarios->second.getNombre();
         cout << "\n\n";
+    }
+    if (count == 0){
+        cout << "No hay propietarios registrados actualmente.\n\n";
     }
 }
 
 void Sistema::modificarPropietario(){
-    int key;
+    int key, resp; 
+    double telNuevo;
+    string nombreNuevo, emailNuevo;
     cout << "Ingrese el ID del propietario: ";
     cin >> key;
     cout << "\n";
@@ -205,11 +213,29 @@ void Sistema::modificarPropietario(){
         cout << "El propietario no ha sido registrada en el sistema.";
     }
     else{
-        //que atributo modificar?
-        cout << "Modificado \n";
-        
+        cout << "Que deseas modificar? \n";
+        cout << "1 = Nombre -- 2 = Email -- 3 = Telefono\n";
+        cout << "Respuesta: ";
+        cin >> resp;
+        if (resp == 1){
+            cout << "Nuevo nombre: ";
+            cin >> nombreNuevo;
+            mapaPropietarios[key].setNombre(nombreNuevo);
+            cout << "Nombre modificado correctamente\n\n";
+        }
+        else if (resp == 2){
+            cout << "Nuevo email: ";
+            cin >> emailNuevo;
+            mapaPropietarios[key].setEmail(emailNuevo);
+            cout << "Email modificado correctamente\n\n";
+        }
+        else{
+            cout << "Nuevo telefono: ";
+            cin >> telNuevo;
+            mapaPropietarios[key].setTelefono(telNuevo);
+            cout << "Telefono modificado correctamente.\n\n";
+        }     
     }
-    cout << "\n";
 }
 
 void Sistema::numPropietariosRegistrados(){

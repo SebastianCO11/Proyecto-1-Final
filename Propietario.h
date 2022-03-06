@@ -18,6 +18,9 @@ class Propietario{
         double getTelefono();
         void infoPropietario();
         string getNombre();
+        void setNombre(string nombre);
+        void setEmail(string email);
+        void setTelefono(double telefono);
 };
 
 #endif

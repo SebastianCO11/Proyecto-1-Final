@@ -37,10 +37,10 @@ void menu(Sistema sistema){
             sistema.agregarMascota();
             break;
         case 3:
-            
+            sistema.modificarPropietario();
             break;
         case 4:
-            
+            sistema.eliminarPropietario();
             break;
         case 5:
             sistema.listarPropietario();
@@ -58,28 +58,27 @@ void menu(Sistema sistema){
             sistema.consultarMascotaPropietario();
             break;
         case 10:
-            
+            sistema.consultarPropietariosMascota();
             break;
         case 11:
-            
+            sistema.asociarMascotaPropietario();
             break;
         case 12:
-            
+            sistema.asociarNuevoPropietarioMascota();
             break;
         case 13:
             sistema.cambiarStatusMascota();
             break;
         case 14:
-            
+            sistema.eliminarPropietarioMascota();
             break;
         default:
             break;
         }
-    } while (opc != 0);
+    }while (opc != 0);
 }
 
-int main()
-{
+int main(){
     Sistema sistema;
     menu(sistema);
     return 0;

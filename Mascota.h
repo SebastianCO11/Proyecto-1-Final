@@ -26,6 +26,7 @@ class Mascota{
         bool getStatusExistencia();
         void setStatusExistencia(bool statusExistencia);
         void infoMascota();
+        
 };
 
 #endif

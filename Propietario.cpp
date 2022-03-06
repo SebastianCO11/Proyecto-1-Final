@@ -35,3 +35,15 @@ void Propietario::infoPropietario(){
 string Propietario::getNombre(){
     return this -> nombre;
 }
+
+void Propietario::setEmail(string email){
+    this -> email = email;
+}
+
+void Propietario::setNombre(string nombre){
+    this -> nombre = nombre;
+}
+
+void Propietario::setTelefono(double telefono){
+    this -> telefono = telefono;
+}
