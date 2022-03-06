@@ -9,20 +9,27 @@ void Sistema::agregarPropietario(){
     double identificacion = 0, telefono;
     string nombre;
     string email;
-    cout << "Ingrese el nombre: ";
-    cin >> nombre;
+    int key;
+    cout << "Ingrese el ID del propietario: ";
+    cin >> key;
     cout << "\n";
-    cout << "Ingrese la identificacion: ";
-    cin >> identificacion;
-    cout << "\n";
-    cout << "Ingrese el telefono: ";
-    cin >> telefono;
-    cout << "\n";
-    cout << "Ingrese el email: ";
-    cin >> email;
-    cout << "\n";
-    Propietario propietarioT(identificacion, telefono, nombre, email);
-    mapaPropietarios[identificacion] = propietarioT;
+    if( mapaPropietarios.find(key) != mapaPropietarios.end() ){
+        cout << "El propietario ya ha sido registrada en el sistema.\n";
+    }
+    else{
+        identificacion = key;
+        cout << "Ingrese el nombre: ";
+        cin >> nombre;
+        cout << "\n";
+        cout << "Ingrese el telefono: ";
+        cin >> telefono;
+        cout << "\n";
+        cout << "Ingrese el email: ";
+        cin >> email;
+        cout << "\n";
+        Propietario propietarioT(identificacion, telefono, nombre, email);
+        mapaPropietarios[identificacion] = propietarioT;
+    }
 }
 
 void Sistema::agregarMascota(){
@@ -31,31 +38,38 @@ void Sistema::agregarMascota(){
     float peso;
     int edad, tipoMascota;
     bool statusExistencia;
-    cout << "Ingrese el nombre: ";
-    cin >> nombreMascota;
-    cout << "\n"; 
-    cout << "Ingrese la identificacion: ";
-    cin >> identificacionMascota;
+    int key;
+    cout << "Ingrese el ID de la mascota: ";
+    cin >> key;
     cout << "\n";
-    cout << "Ingrese el tipo de mascota (1 = perro / 2 = gato / 3 = otro): ";
-    cin >> tipoMascota;
-    cout << "\n";
-    cout << "Ingrese la raza: ";
-    cin >> raza;
-    cout << "\n";
-    cout << "Ingrese el tipo de sangre: ";
-    cin >> tipoSangre;
-    cout << "\n";
-    cout << "Ingrese el peso: ";
-    cin >> peso;
-    cout << "\n";
-    cout << "Ingrese la edad: ";
-    cin >> edad;
-    cout << "\n";
-    statusExistencia = true;
-    Mascota mascotaT(identificacionMascota, tipoMascota, raza, tipoSangre, nombreMascota, 
-                    peso, edad, statusExistencia);
-    mapaMascota[identificacionMascota] = mascotaT;
+    if( mapaMascota.find(key) != mapaMascota.end() ){
+        cout << "La mascota ya ha sido registrada en el sistema.\n";
+    }
+    else{
+        identificacionMascota = key;
+        cout << "Ingrese el nombre: ";
+        cin >> nombreMascota;
+        cout << "\n"; 
+        cout << "Ingrese el tipo de mascota (1 = perro / 2 = gato / 3 = otro): ";
+        cin >> tipoMascota;
+        cout << "\n";
+        cout << "Ingrese la raza: ";
+        cin >> raza;
+        cout << "\n";
+        cout << "Ingrese el tipo de sangre: ";
+        cin >> tipoSangre;
+        cout << "\n";
+        cout << "Ingrese el peso: ";
+        cin >> peso;
+        cout << "\n";
+        cout << "Ingrese la edad: ";
+        cin >> edad;
+        cout << "\n";
+        statusExistencia = true;
+        Mascota mascotaT(identificacionMascota, tipoMascota, raza, tipoSangre, nombreMascota, 
+                        peso, edad, statusExistencia);
+        mapaMascota[identificacionMascota] = mascotaT;
+    }
 }
 
 void Sistema::asociarMascotaPropietario(){

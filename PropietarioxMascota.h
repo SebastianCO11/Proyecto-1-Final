@@ -11,9 +11,12 @@ using std::vector;
 
 class PropietarioxMascota{
     private:
-        
+        Propietario propietario;
+        Mascota mascota;  
 
     public:
-        void muchosAmuchos();
+        Propietario getPropietario();
+        Mascota getMascota();
+        PropietarioxMascota(Propietario propietario, Mascota mascota);
 };
 #endif

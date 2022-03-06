@@ -1,5 +1,13 @@
 #include "PropietarioxMascota.h"
 
-void PropietarioxMascota::muchosAmuchos(){
+Mascota PropietarioxMascota::getMascota(){
+    return this-> mascota;
+}
+
+Propietario PropietarioxMascota::getPropietario(){
+    return this -> propietario;
+}
+
+PropietarioxMascota::PropietarioxMascota(Propietario propietario, Mascota mascota){
     
 }
