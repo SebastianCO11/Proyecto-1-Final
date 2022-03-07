@@ -82,9 +82,9 @@ void Sistema::asociarMascotaPropietario(){
     cin >> keyPropietario;
     cout << "\n";
     if( mapaMascota.find(keyMascota) == mapaMascota.end() ){
-        cout << "La mascota no ha sido registrada en el sistema.\n";
+        cout << "La mascota no ha sido registrada en el sistema.\n\n";
         if( mapaPropietarios.find(keyPropietario) == mapaPropietarios.end() ){
-            cout << "El propietario no ha sido registrada en el sistema.\n";
+            cout << "El propietario no ha sido registrada en el sistema.\n\n";
         }
     }
     else{
@@ -96,7 +96,44 @@ void Sistema::asociarMascotaPropietario(){
 }
 //Falta
 void Sistema::asociarNuevoPropietarioMascota(){
-
+    double keyMascota, keyPropietario, keyPropietario2;
+    cout << "Ingrese el ID de la mascota: ";
+    cin >> keyMascota;
+    cout << "\n";
+    cout << "Ingrese el ID del propietario: ";
+    cin >> keyPropietario;
+    cout << "\n";
+    cout << "Ingrese el ID del nuevo propietario: ";
+    cin >> keyPropietario2;
+    cout << "\n";
+    if( mapaMascota.find(keyMascota) == mapaMascota.end() ){
+        cout << "La mascota no ha sido registrada en el sistema.\n\n";
+    }
+    else if( mapaPropietarios.find(keyPropietario) == mapaPropietarios.end() ){
+        cout << "El propietario no ha sido registrado en el sistema.\n\n";
+    }
+    else if( mapaPropietarios.find(keyPropietario2) == mapaPropietarios.end() ){
+        cout << "El propietario no ha sido registrado en el sistema.\n\n";
+    }
+    else{
+        cout << "iepa, que pasa gente\n\n";
+        int i, j = 0, k = 0;
+        while(j < mapaPropietarios.size()){
+            j++;
+            k++;
+            if( PXMvector[j].getPropietario().getIdentificacion() == keyPropietario2 ){
+               j  = mapaPropietarios.size() + 1;
+            }
+            cout << "entre a j\n";
+        }
+        cout << "entre\n";
+        for(int i = 0; i < mapaPropietarios.size(); i++ ){
+            if( PXMvector[i].getPropietario().getIdentificacion() == keyPropietario ){
+                PXMvector[i].setPropietario(PXMvector[k].getPropietario());
+            }
+        }
+        cout << "Se acaba de cambiar el propietario a la mascota\n";
+    }
 }
 
 void Sistema::cambiarStatusMascota(){
@@ -121,9 +158,9 @@ void Sistema::cambiarStatusMascota(){
         cout << "\n";
     }
 }
-//Falta
+
 void Sistema::consultarPropietariosMascota(){
-    int key,  i = 0;
+    int key, i;
     cout << "Ingrese el ID de la mascota: ";
     cin >> key;
     cout << "\n";
@@ -132,18 +169,17 @@ void Sistema::consultarPropietariosMascota(){
     }
     else{
         cout << "Los propietarios de la mascota son: \n";
-        for (itrPropietarios = mapaPropietarios.begin(); itrPropietarios != mapaPropietarios.end(); itrPropietarios++){
-            if( PXMvector[i++].getMascota().getIdentificacionMascota() == 
-                mapaMascota[key].getIdentificacionMascota() ){
-                itrPropietarios->second.infoPropietario();
+        for (i = 0; i < mapaPropietarios.size(); i++ ){
+            if( PXMvector[i].getMascota().getIdentificacionMascota() == key ){
+                PXMvector[i].getPropietario().infoPropietario();
             }
         }
     }
     cout << "\n";
 }
-//Falta
+
 void Sistema::consultarMascotaPropietario(){
-    int key;
+    int key, i;
     cout << "Ingrese el ID del propietario: ";
     cin >> key;
     cout << "\n";
@@ -151,8 +187,12 @@ void Sistema::consultarMascotaPropietario(){
         cout << "El propietario no ha sido registrada en el sistema.";
     }
     else{
-        cout << "La(s) mascota(s) de este propietario son: \n";
-        
+        cout << "Las mascotas del propietari son: \n";
+        for (i = 0; i < mapaMascota.size(); i++ ){
+            if( PXMvector[i].getPropietario().getIdentificacion() == key ){
+                PXMvector[i].getMascota().infoMascota();
+            }
+        }
     }
     cout << "\n";
 }
@@ -172,7 +212,28 @@ void Sistema::eliminarPropietario(){
 }
 //Falta
 void Sistema::eliminarPropietarioMascota(){
-
+    double keyMascota, keyPropietario;
+    cout << "Ingrese el ID de la mascota: ";
+    cin >> keyMascota;
+    cout << "\n";
+    cout << "Ingrese el ID del propietario a eliminar: ";
+    cin >> keyPropietario;
+    cout << "\n";
+    if( mapaMascota.find(keyMascota) == mapaMascota.end() ){
+        cout << "La mascota no ha sido registrada en el sistema.\n\n";
+        if( mapaPropietarios.find(keyPropietario) == mapaPropietarios.end() ){
+            cout << "El propietario no ha sido registrada en el sistema.\n\n";
+        }
+    }
+    else{
+        int j;
+        for(j = 0; j < PXMvector.size(); j++){
+            if(PXMvector[j].getPropietario().getIdentificacion() == keyPropietario){
+                PXMvector.erase(PXMvector.begin()+j);
+            }
+        }
+        cout << "Se acaba de eliminar el propietario a la mascota\n";
+    }
 }
 
 void Sistema::infoMascotasRegistradas(){

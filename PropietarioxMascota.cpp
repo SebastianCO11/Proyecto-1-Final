@@ -12,3 +12,7 @@ PropietarioxMascota::PropietarioxMascota(Propietario propietario, Mascota mascot
     this -> propietario = propietario;
     this -> mascota = mascota;
 }
+
+Propietario PropietarioxMascota::setPropietario(Propietario propietario){
+    this -> propietario = propietario;
+}

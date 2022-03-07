@@ -18,5 +18,6 @@ class PropietarioxMascota{
         Propietario getPropietario();
         Mascota getMascota();
         PropietarioxMascota(Propietario propietario, Mascota mascota);
+        Propietario setPropietario(Propietario propietario);
 };
 #endif
