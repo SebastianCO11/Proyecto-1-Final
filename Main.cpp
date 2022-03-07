@@ -1,9 +1,7 @@
-#include <iostream>
 #include "Sistema.h"
 
 using std::cin;
 using std::cout;
-using std::string;
 
 void menu(Sistema sistema){
     int opc = 0;
@@ -18,13 +16,13 @@ void menu(Sistema sistema){
         cout << "6. Num de propietarios registrados \n";
         cout << "7. Info de propietarios registrados \n";
         cout << "8. Info de mascotas registrados \n";
-        cout << "9. Consultar propietarios de la mascota \n";
-        cout << "10. Consultar mascotas del propietario \n";
-        cout << "11. Asociar mascota a un propietario \n";
-        cout << "12. Asociar nuevo propietario a una mascota \n";
-        cout << "13. Cambiar el estatus de la mascota \n";
-        cout << "14. Eliminar asociacion propietario a mascota \n";
-        cout << "0. Salir \n";
+        cout << "9. Asociar mascota a un propietario \n";
+        cout << "10. Asociar propietario a una mascota \n";
+        cout << "11. Consultar propietarios de la mascota \n";
+        cout << "12. Consultar mascotas del propietario \n";
+        cout << "13. Eliminar asociacion propietario a mascota \n";
+        cout << "14. Cambiar el estatus de la mascota \n";
+        cout << "0. Salir \n\n";
         cout << "Respuesta: ";
         cin >> opc;
 
@@ -37,39 +35,49 @@ void menu(Sistema sistema){
             sistema.agregarMascota();
             break;
         case 3:
-            
+            sistema.modificarPropietario();
             break;
         case 4:
-            
+            sistema.eliminarPropietario();
             break;
         case 5:
-            
+            sistema.listarPropietario();
             break;
         case 6:
             sistema.numPropietariosRegistrados();
             break;
         case 7:
-            
+            sistema.infoPropietariosRegistrados();
             break;
         case 8:
-            
+            sistema.infoMascotasRegistradas();
             break;
         case 9:
-            sistema.consultarMascotaPropietario();
+            sistema.asociarMascotaPropietario();
             break;
         case 10:
-            
+            sistema.asociarNuevoPropietarioMascota();
+            break;
+        case 11:
+            sistema.consultarPropietariosMascota();
+            break;
+        case 12:
+            sistema.consultarMascotaPropietario();
+            break;
+        case 13:
+            sistema.eliminarPropietarioMascota();
+            break;
+        case 14:
+            sistema.cambiarStatusMascota();
             break;
         default:
             break;
         }
-    } while (opc != 0);
+    }while (opc != 0);
 }
 
-int main()
-{
+int main(){
     Sistema sistema;
-    sistema.inicializarDatos();
     menu(sistema);
     return 0;
 }

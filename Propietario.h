@@ -3,7 +3,8 @@
 
 #include <iostream>
 
-using std::string; 
+using namespace std;
+using std::string;
 
 class Propietario{
     private:
@@ -14,8 +15,12 @@ class Propietario{
     public:
         Propietario(double identificacion, double telefono, string nombre, string email);
         Propietario();
-        double getIdentificacion(double statusExistencia);
-        double getTelefono(double telefono);
+        double getIdentificacion();
+        string getNombre();
+        void infoPropietario();
+        void setNombre(string nombre);
+        void setEmail(string email);
+        void setTelefono(double telefono);
 };
 
 #endif

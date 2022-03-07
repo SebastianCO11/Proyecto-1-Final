@@ -3,21 +3,23 @@
 
 #include "Propietario.h"
 #include "Mascota.h"
+#include "PropietarioxMascota.h"
 #include <vector>
 #include <unordered_map>
+#include <ctime>
+#include <iostream>
 
+using namespace std;
 using std::string;
 using std::unordered_map;
 
 class Sistema{
     private:
         unordered_map<double, Propietario> mapaPropietarios;
-        vector<Propietario> propietarios;
         unordered_map<double, Mascota> mapaMascota;
-        vector<Mascota> mascotas;
-
+        vector<PropietarioxMascota> PXMvector;
+        
     public:
-        void inicializarDatos();
         void agregarPropietario();
         void agregarMascota();
         void modificarPropietario();
@@ -26,12 +28,12 @@ class Sistema{
         void numPropietariosRegistrados();
         void infoPropietariosRegistrados();
         void infoMascotasRegistradas();
-        void consultarPropietariosMascota();
-        void consultarMascotaPropietario();
         void asociarMascotaPropietario();
         void asociarNuevoPropietarioMascota();
-        void cambiarStatusMascota();
+        void consultarPropietariosMascota();
+        void consultarMascotaPropietario();
         void eliminarPropietarioMascota();
+        void cambiarStatusMascota();
 };
 
 #endif
