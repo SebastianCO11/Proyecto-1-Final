@@ -16,6 +16,6 @@ El sistema permite:
 
 # Link al UML:
 https://drive.google.com/file/d/1hTfTsq8xaI5-xGvx_v3Cv5eNUsC2KKIO/view?usp=sharing
-# Link UML:
+# Imagenes UML:
 ![2022-03-07 (2)](https://user-images.githubusercontent.com/85460585/157148428-0a8b0f84-cfb2-4151-956c-17d843531f1b.png)
 ![2022-03-07 (3)](https://user-images.githubusercontent.com/85460585/157148434-1e2602ed-239e-40ae-9d08-87ad512bfbd3.png)
